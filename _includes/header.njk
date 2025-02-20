@@ -1,0 +1,46 @@
+    <section class="bg-primary">
+      <div class="px-8 2xl:max-w-7xl mx-auto pt-12" data-aos="fade-up" data-aos-duration="2000">
+<h1 class="text-secondary text-xs font-large h_text"><a href="{{metadata.url}}">{{metadata.title}}</a></h1>
+      </div>
+      <div class="px-8 2xl:max-w-7xl mx-auto pb-12">
+        <div class="mt-6 space-y-2">
+          <div class="h-0.5 bg-secondary" data-aos="fade-up" data-aos-duration="1000"></div>
+          <div class="flex flex-col sm:flex-row gap-3 justify-between lg:items-center" data-aos="fade-up" data-aos-duration="1500">
+            <div class="flex gap-3 items-center">
+              <h3 class="text-secondary text-xs font-medium">{% for i in metadata.info %}
+                <span>{{i.text}}</span>{% endfor %}
+              </h3>
+              <span class="h-auto border-secondary border"></span>
+              <span class="text-secondary text-xs font-semibold">{{metadata.intro}}</span>
+            </div>
+            <div>
+              <ul class="lg:items-center flex justify-between w-full gap-3 relative text-xs">
+                {% for nav in metadata.navbar %}<li>
+                  <a href="{{nav.url}}" 
+                  class="hover:text-secondary/80 text-secondary">{{nav.nav}}</a>
+                </li>{% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="h-1.5 bg-secondary" data-aos="fade-up" data-aos-duration="2000"></div>
+          <div class="h-3 bg-secondary" data-aos="fade-up" data-aos-duration="2500"></div>
+          <div class="h-6 bg-secondary" data-aos="fade-up" data-aos-duration="3000"></div>
+          <div class="h-12 bg-secondary" data-aos="fade-up" data-aos-duration="3000"></div>
+          <div class="h-24 bg-secondary flex items-end p-4" data-aos="fade-up" 
+          data-aos-duration="3000" 
+          data-aos-delay="150"></div>
+          <div class="flex w-full">
+            <span class="text-xs font-medium text-secondary flex">
+                {{metadata.section1.text1}} &nbsp; <a class="hover:text-black text-secondary duration-200 
+                font-bold" 
+                href="{{metadata.section1.text2_url}}">{{metadata.section1.text2}}</a>
+            </span>
+            <span class="text-xs font-medium text-secondary flex ml-auto">
+                {{metadata.section2.text1}} &nbsp; <a class="hover:text-black text-secondary duration-200 
+                font-bold" 
+                href="{{metadata.section2.text2_url}}">{{metadata.section2.text2}}</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
