@@ -1,0 +1,40 @@
+    <section class="bg-primary">
+      <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+        <div class="mt-32 space-y-2">
+          <div class="h-0.5 bg-secondary" data-aos="fade-up" data-aos-duration="1000"></div>
+          <h3 class="text-secondary text-xs font-medium" data-aos="fade-up" data-aos-duration="1500">
+            {% for f in metadata.info %}<span>{{f.text}} </span> {% endfor %}
+          </h3>
+          <div class="h-1.5 bg-secondary" data-aos="fade-up" data-aos-duration="2000"></div>
+          <div class="h-3 bg-secondary" data-aos="fade-up" data-aos-duration="2500"></div>
+          <div class="h-6 bg-secondary" data-aos="fade-up" data-aos-duration="3000"></div>
+          <div class="h-12 bg-secondary" data-aos="fade-up" data-aos-duration="3000"></div>
+          <div class="h-24 bg-secondary" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="150"></div>
+        </div>
+        <ul class="mx-auto flex flex-col lg:flex-row text-left gap-3 items-start text-secondary mt-3">
+          {% for n in metadata.footer_nav %}<li class="flow-root col-span-full h-full ">
+            <a href="{{n.url}}">
+              <div>
+                <p class="italic shrink-0 text-xs ">{{n.nav}}</p>
+              </div>
+            </a>
+          </li>{% endfor %}
+        </ul>
+      </div>
+    </section>
+<footer>
+<div class="footer">
+  <p>
+    Built With <a href="https://11ty.dev" target="_blank">{{ eleventy.generator }}</a> {{metadata.footer.text1}} 
+    <a href="{{metadata.footer.text2_url}}" target="_blank">{{metadata.footer.text2}}</a>
+  </p>
+</div>
+  <a href="/feed/feed.xml" target="_blank" class="rss-icon" aria-label="RSS Feed">
+    <i class="fas fa-rss"></i>
+  </a>
+</footer>
+    <script type="module" src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init();
+    </script>

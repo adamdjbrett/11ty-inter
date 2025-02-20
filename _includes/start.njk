@@ -1,0 +1,65 @@
+---
+layout: base.njk
+---
+    <section class="bg-primary">
+      <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 text-secondary gap-6 text-lg">
+          <p class="text-3xl leading-6 lg:col-span-3 lg:text-5xl lg:leading-9 indent-32 lg:indent-32" data-aos="fade-up" data-aos-duration="2000"> {{title}}</p>
+          <p class="text-lg lg:col-start-2  leading-relaxed underline underline-offset-4" data-aos="fade-up" data-aos-duration="2500"> {{sub_title}}</a>
+          </p>
+          <p class="lg:col-start-4 leading-relaxed" data-aos="fade-up" data-aos-duration="2500"> {{description}} </p>
+          <p class="lg:col-start-4 leading-relaxed " data-aos="fade-up" data-aos-duration="3000">{{content|safe}}</p>
+          <p class="text-3xl leading-6 lg:col-span-3 lg:text-7xl lg:leading-13 lg:col-start-2 lg:mt-48 indent-32 lg:indent-32" 
+          data-aos="fade-up" data-aos-duration="3000"> {{intro}}</p>
+        </div>
+      </div>
+    </section>
+    <section class="bg-primary">
+      <div class="px-8 2xl:max-w-7xl mx-auto py-32">
+        <div class="space-y-2">
+          <div class="h-0.5 bg-secondary" data-aos="fade-up" data-aos-duration="1000"></div>
+          <h3 class="text-secondary text-base font-medium" data-aos="fade-up" data-aos-duration="1500">
+            <span class="font-bold">{{metadata.featured_post}}</span>
+          </h3>
+        </div>
+        <ul class="mx-auto grid grid-cols-1  
+        sm:grid-cols-2 text-secondary lg:grid-cols-4 items-start gap-6 mt-32" role="list">
+          {% for post in collections.featured |reverse | limit (4) %}
+          <li class="flow-root h-full " featuredta-aos="fade-up" data-aos-duration="2000">
+            <a href="{{post.url}}">
+              <div class="h-full flex flex-col justify-between">
+                <div>
+                  <p class="group-hover:text-secondary/70 
+                  text-secondary text-9xl font-black lg:rotate-90 xl:-translate-x-32 
+                  lg:-translate-x-20 lg:mb-8 xl:mb-0  lg:pb-8"> {{ '0' if loop.index < 10 }}{{ loop.index }}.  </p>
+                  <p class="italic shrink-0">{{post.data.title}}</p>
+                  <p class="text-3xl  mt-3 leading-6 indent-9"> {{post.data.description}} </p>
+                </div>
+              </div>
+            </a>
+          </li> 
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    <section class="bg-primary">
+      <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+        <div class="mt-6 space-y-2">
+          <div class="h-0.5 bg-secondary"></div>
+          <h3 class="text-secondary text-base font-medium">
+            <span class="font-bold">{{metadata.recent_post}}</span>
+          </h3>
+        </div>
+        <div class="flex flex-col text-secondary pt-2 mt-2 gap-12 lg:gap-32">
+            {% for post in collections.posts |reverse | limit (4) %}
+          <div data-aos="fade-up" data-aos-duration="1500" class="grid grid-cols-1 lg:items-end lg:grid-cols-4 py-4 gap-4">
+            <p class="text-3xl leading-6 lg:col-span-3 lg:text-5xl lg:leading-9 indent-32 lg:indent-32"> <a href="{{post.url}}">{{post.data.description}}</a></p>
+            <p class="italic text-xs block "> {{post.data.title}} </p>
+          </div>{% endfor %}
+          <div data-aos="fade-up" data-aos-duration="1500" class="grid grid-cols-1 lg:items-end lg:grid-cols-4 py-4 gap-4">
+            <p class="text-3xl leading-6 lg:col-span-3 lg:text-5xl lg:leading-9 indent-32 lg:indent-32"> <a href="{{metadata.blog_widget.url}}">{{metadata.blog_widget.title}}</a></p>
+            <p class="italic text-xs block "> {{metadata.blog_widget.info}} </p>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,75 @@
+---
+layout: base.njk
+---
+<section class="bg-primary">
+      <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 text-secondary gap-6 text-lg"> <p> 
+            <span class="text-xs font-medium text-secondary flex">
+                Published on <time datetime="{{ page.date | htmlDateString }}">&nbsp; {{ page.date | readableDate }}</time>&nbsp;  by &nbsp; <a href="{{metadata.author.url}}">{{metadata.author.name}}</a>
+            </span>
+            <span class="text-xs font-medium text-secondary flex ml-auto">
+              Tags: {%- for tag in tags | filterTagList %}{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %} &nbsp; <a href="{{ tagUrl }}">{{ tag }}&nbsp; </a>{%- if not loop.last %}, {% endif %}	{%- endfor %}
+            </span></p>
+          <p class="text-3xl leading-6 lg:col-span-3 lg:text-5xl lg:leading-9 indent-32 lg:indent-32" data-aos="fade-up" data-aos-duration="2000"> <a  href="{{page.url}}">{{title}}</a></p>
+          <p class="text-lg lg:col-start-2  leading-relaxed underline underline-offset-4" data-aos="fade-up" data-aos-duration="2500"> {{sub_title}}</a></p>
+          <p class="lg:col-start-4 leading-relaxed" data-aos="fade-up" data-aos-duration="2500"> {{description}} </p>
+          <p>{{content|toc|safe}}</p>
+          <p class="lg:col-start-4 leading-relaxed " data-aos="fade-up" data-aos-duration="3000">{{content|safe}}</p>
+          <p class="text-3xl leading-6 lg:col-span-3 lg:text-7xl lg:leading-13 lg:col-start-2 lg:mt-48 indent-32 lg:indent-32" 
+          data-aos="fade-up" data-aos-duration="3000"> {{intro}}</p>
+        </div>
+      </div>
+</section>
+{%- if collections.posts %}
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+    <section class="bg-primary">
+      <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+        <div class="flex flex-col text-secondary pt-2 mt-2 gap-12 lg:gap-32">
+            {%- if previousPost %}
+          <div data-aos="fade-up" data-aos-duration="1500" class="grid grid-cols-1 lg:items-end lg:grid-cols-4 py-4 gap-4">
+            <p class="text-3xl leading-6 lg:col-span-3 lg:text-5xl lg:leading-9 indent-32 lg:indent-32"> <a href="{{ previousPost.url }}">{{ previousPost.data.description }}</a></p>
+            <p class="italic text-xs block "><a href="{{ previousPost.url }}">← Previous Article<br/> {{previousPost.data.title}} </a></p>
+          </div>{% endif %}
+            {%- if nextPost %}
+          <div data-aos="fade-up" data-aos-duration="1500" class="grid grid-cols-1 lg:items-end lg:grid-cols-4 py-4 gap-4">
+            <p class="text-3xl leading-6 lg:col-span-3 lg:text-5xl lg:leading-9 indent-32 lg:indent-32"> <a href="{{ nextPost.url }}">{{ nextPost.data.description }}</a></p>
+            <p class="italic text-xs block "><a href="{{ nextPost.url }}">Next Article →<br/> {{nextPost.data.title}} </a></p>
+          </div>{% endif %}
+        </div>
+      </div>
+    </section>
+{%- endif %}
+{%- endif %}
+
+<!--
+<nav class="breadcrumb" aria-label="breadcrumb">
+<div class="breadcrumb-item"><a href="/">Home</a></div>
+<div class="breadcrumb-item"><a href="/blog">Blog</a></div>
+<div class="breadcrumb-item active" aria-current="page">{{title}}</div>
+</nav>
+<article class="article-content">
+<h1><a href="{{page.url}}">{{title}}</a></h1>
+<h2>{{description}}</h2>
+<div class="article-meta">
+<p><span><i class="fas fa-calendar"></i> Published on <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> by <i class="fas fa-user"></i> <a href="{{metadata.author.url}}">{{metadata.author.name}}</a></span></p>
+{% if tag %}<p><i class="fa-solid fa-tags"></i> {%- for tag in tags | filterTagList %}{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %} <a href="{{ tagUrl }}">{{ tag }}</a>{%- if not loop.last %}, {% endif %}	{%- endfor %}</p>{% endif %}
+</div>
+<div class="toci">
+<h3>{{metadata.toc}}</h3>
+{{content|toc|safe}}
+</div>
+{{content|safe}}
+</article>
+{%- if collections.posts %}
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<div class="article-navigation">
+{%- if previousPost %}<a href="{{ previousPost.url }}" class="nav-button" id="prev-article">← Previous Article</a>{% endif %}
+{%- if nextPost %}<a href="{{ nextPost.url }}" class="nav-button" id="next-article">Next Article →</a>{% endif %}
+</div>
+{%- endif %}
+{%- endif %}
+-->
