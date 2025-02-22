@@ -1,10 +1,11 @@
 title: "11ty Inter"
-description: "A 11ty Starter Monocpsace Paper develop by Adam Dj Brett"
+description: "A 11ty Starter Monocpsace Paper develop by Adam DJ Brett"
 language: "en"
 locale: en_US
 image: /img/logos.png
 favicon: /img/logos.png
-url: "http://localhost:8080"
+url: "https://inter.000000076.xyz"
+#url: "http://localhost:8080"
 metasocial: 
  - facebook: "https://www.facebook.com/"
  - twitteruser: "@username"
@@ -18,7 +19,7 @@ intro: "Available for work"
 
 section1:
  text1: A project develop by
- text2: Adam Dj Brett
+ text2: Adam DJ Brett
  text2_url: https://adamdjbrett.com
 
 section2: 
@@ -46,7 +47,9 @@ navbar:
  - nav: Contact
    url: https://www.adamdjbrett.com
  - nav: Github
-   url: https://github.com/adamdjbrett/11ty-monospace-paper
+   url: https://github.com/adamdjbrett/
+ - nav: More Themes
+   url: https://000000076.xyz/  
 
 footer_nav: 
  - nav: Home
@@ -72,7 +75,7 @@ footer_nav:
 
 footer: 
  text1: Develop by
- text2: Adam Dj Brett
+ text2: Adam DJ Brett
  text2_url: https://adamdjbrett.com
 
 author: 

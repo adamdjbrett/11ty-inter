@@ -1,6 +1,6 @@
 # 11ty-inter
 
-11ty Starter Project in da ART develop by [Adam Dj Brett](https://adamdjbrett.com)
+11ty Starter Project in da ART develop by [Adam DJ Brett](https://adamdjbrett.com)
 
 ![MOckup](mockup.jpg)
 
