@@ -1,8 +1,8 @@
 # 11ty-inter
 
-11ty Starter Project in da ART develop by [Adam DJ Brett](https://adamdjbrett.com)
+11ty Starter Project featuring a port of [swissfolio](https://swissfolio.vercel.app/)
 
-![MOckup](mockup.jpg)
+![Mockup](mockup.jpg)
 
 Font in da ART Themes
 
